@@ -44,6 +44,16 @@ private static final String SALA_NAO_ENCONTRADA_GET_MSG = "A sala não foi encon
 		return salaResponseConverter.convert(salaRepository.save(salaRequestConverter.convert(request)));
 	}
 	
+//	public SalaResponseDTO put(final SalaRequestPutDTO request) {
+//		
+//		return salaRepository.getById(request.getId())
+//							 .map(sala -> salaRequestConverter.convert(request, sala))
+//							 .map(salaRepository::save)
+//							 .map(salaResponseConverter::convert)
+//							 .orElseThrow(this::generateNotFound);
+//							 
+//	}
+	
 	public void delete(String id) {
 		salaRepository.delete(getById(id));
 	}

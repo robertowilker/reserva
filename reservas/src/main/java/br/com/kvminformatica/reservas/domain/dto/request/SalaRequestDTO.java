@@ -1,8 +1,12 @@
 package br.com.kvminformatica.reservas.domain.dto.request;
 
+import javax.validation.constraints.NotEmpty;
+
 public class SalaRequestDTO {
 
+	@NotEmpty
 	private String nomeDaSala;
+	@NotEmpty
 	private String andar;
 	
 	public SalaRequestDTO() {}

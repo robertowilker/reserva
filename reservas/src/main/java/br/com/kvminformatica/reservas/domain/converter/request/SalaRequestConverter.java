@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 
 import br.com.kvminformatica.reservas.domain.dto.request.SalaRequestDTO;
+import br.com.kvminformatica.reservas.domain.dto.request.SalaRequestPutDTO;
 import br.com.kvminformatica.reservas.domain.model.Sala;
 
 @Component
@@ -16,4 +17,8 @@ public class SalaRequestConverter implements Converter<SalaRequestDTO, Sala>{
 						source.getAndar());
 	}
 
+	public Sala convert(SalaRequestPutDTO source, Sala model) {
+		model.setNomeDaSala(source.getNomeDaSala());
+		return model;
+	}
 }
