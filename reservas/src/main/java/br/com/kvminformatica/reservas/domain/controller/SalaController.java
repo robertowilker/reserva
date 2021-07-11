@@ -23,6 +23,11 @@ public class SalaController {
 	
 	@Autowired
 	private SalaService service;
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<SalaResponseDTO> getId(@PathVariable("id") String id){
+		return new ResponseEntity<>(service.getSalaById(id), HttpStatus.OK);
+	}
 
 	@GetMapping
 	public ResponseEntity<List<SalaResponseDTO>> list() {

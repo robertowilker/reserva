@@ -1,7 +1,6 @@
 package br.com.kvminformatica.reservas.domain.service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +28,10 @@ private static final String SALA_NAO_ENCONTRADA_GET_MSG = "A sala não foi encon
 	
 	@Autowired
 	private SalaRequestConverter salaRequestConverter;
+	
+	public SalaResponseDTO getSalaById(String id) {
+		return salaResponseConverter.convert(getById(id));
+	}
 	
 	public List<SalaResponseDTO> getAll(){
 		return salaRepository.findAll()
