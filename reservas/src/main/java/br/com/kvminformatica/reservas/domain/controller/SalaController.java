@@ -3,10 +3,17 @@ package br.com.kvminformatica.reservas.domain.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.kvminformatica.reservas.domain.dto.request.SalaRequestDTO;
 import br.com.kvminformatica.reservas.domain.dto.response.SalaResponseDTO;
 import br.com.kvminformatica.reservas.domain.service.SalaService;
 
@@ -18,10 +25,18 @@ public class SalaController {
 	private SalaService service;
 
 	@GetMapping
-	public List<SalaResponseDTO> list() {
+	public ResponseEntity<List<SalaResponseDTO>> list() {
 		
-//		Sala sala = new Sala("risk pro", "17");
-//		return Arrays.asList(sala, sala);
-		return service.getAll();
+		return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
+	}
+	
+	@PostMapping
+	public ResponseEntity<SalaResponseDTO> post(@RequestBody SalaRequestDTO request) {
+		return new ResponseEntity<>(service.post(request), HttpStatus.CREATED);
+	}
+	
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable("id") String id) throws Exception{
+		service.delete(id);
 	}
 }
