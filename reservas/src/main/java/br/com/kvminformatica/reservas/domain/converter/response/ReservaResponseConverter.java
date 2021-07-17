@@ -15,7 +15,7 @@ public class ReservaResponseConverter implements Converter<Reserva, ReservaRespo
 		return new ReservaResponseDTO(source.getSala().toString(),
 									  source.getData().toString(),
 									  source.getHorarioDeInicio().toString(),
-									  source.getNomeDaReunião(),
+									  source.getNomeDaReuniao(),
 									  source.getColaborador(),
 									  source.getStatus().toString());
 	}

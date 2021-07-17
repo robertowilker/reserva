@@ -68,14 +68,6 @@ public class Reserva {
 		this.horarioDeTermino = horarioDeTermino;
 	}
 
-	public String getNomeDaReuniao() {
-		return nomeDaReuniao;
-	}
-
-	public void setNomeDaReuniao(String nomeDaReuniao) {
-		this.nomeDaReuniao = nomeDaReuniao;
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -108,12 +100,12 @@ public class Reserva {
 		this.horarioDeTermino = horariodeTermino;
 	}
 
-	public String getNomeDaReunião() {
+	public String getNomeDaReuniao() {
 		return nomeDaReuniao;
 	}
 
-	public void setNomeDaReunião(String nomeDaReunião) {
-		this.nomeDaReuniao = nomeDaReunião;
+	public void setNomeDaReuniao(String nomeDaReuniao) {
+		this.nomeDaReuniao = nomeDaReuniao;
 	}
 
 	public String getColaborador() {
