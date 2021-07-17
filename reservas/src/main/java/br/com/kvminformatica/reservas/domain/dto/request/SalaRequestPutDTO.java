@@ -1,20 +1,11 @@
 package br.com.kvminformatica.reservas.domain.dto.request;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
 
 public class SalaRequestPutDTO {
 
-	private String id;
-	@NotEmpty
+	@NotBlank
 	private String nomeDaSala;
-	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getNomeDaSala() {
 		return nomeDaSala;
