@@ -13,10 +13,16 @@ public class ReservaResponseConverter implements Converter<Reserva, ReservaRespo
 	public ReservaResponseDTO convert(Reserva source) {
 		
 		return new ReservaResponseDTO(source.getSala().toString(),
+									  source.getData().toString(),
 									  source.getHorarioDeInicio().toString(),
 									  source.getNomeDaReunião(),
 									  source.getColaborador(),
 									  source.getStatus().toString());
+	}
+
+	public ReservaResponseDTO convert(ReservaResponseDTO reservaById) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
